@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zaio | PhaseOne</title>
+          <!--loading bootsrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+         <!--Loading the css of the body-->
+     <link rel="stylesheet" type="text/css" href="css/phase1.css" /> 
+     <!----------------------------------------------------------------------------->
+
+     <!--Loading the responsive css-->
+     <link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen and (max-width: 800px)" />
+     <!----------------------------------------------------------------------------->
+ <!----------------------------------------------------------------------------->
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    </head>
+
+    <body style="background-image: url('img/bg.svg');">
+        <div id="Container">
+                <h1 style="text-align:center">HICKIES Originals</h1><br>
+            <div id="Menu">
+                    <fieldset class="rating">
+                            <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+                            <br>
+                            
+                            <p style="margin: 0; display: inline; color:brown;"><b>R:</b></p>
+                            <p id="price" style="margin: 0; display: inline; color:brown; "></p>
+                            
+                        </fieldset>
+
+                        <h2>1,293 Reviews</h2>
+                       <!--<h2> 25% OFF </h2>--> 
+             </div>
+
+            </br>
+
+             <h3>ONLINE EXCLUSIVE</h3> 
+                        <p style="margin: 0; display: inline;">COLOR:</p>
+                        <p id="colorchnager" style="margin: 0; display: inline;" align="left">Pick color</p>
+            </br>
+
+            <!--The circle butons with the onclick functions-->
+
+
+ 
+ 
+            <div id="red" type="button" class="circle effect-1 sub-b" onclick="red(); colourPicker(this.id)"></div>
+            <div id="pink" type="button" class="circle effect-1 sub-b" onclick="pink(); colourPicker(this.id)"></div> 
+            <div id="purple" type="button" class="circle effect-1 sub-b" onclick="purple(); colourPicker(this.id)"></div>
+            <div id="orange" type="button" class="circle effect-1 sub-b" onclick="orange(); colourPicker(this.id)"></div>
+            <div id="lime" type="button" class="circle effect-1 sub-b" onclick="lime(); colourPicker(this.id)"></div>
+            <div id="black" type="button" class="circle effect-1 sub-b" onclick="black(); colourPicker(this.id)"></div>
+            <div id="burlywood" type="button" class="circle effect-1 sub-b" onclick="burlywood(); colourPicker(this.id)"></div>
+            <div id="coral" type="button" class="circle effect-1 sub-b" onclick="coral(); colourPicker(this.id)"></div>
+            <div id="grey" type="button" class="circle effect-1 sub-b" onclick="grey(); colourPicker(this.id)"></div>
+            <div id="brown" type="button" class="circle effect-1 sub-b" onclick="brown(); colourPicker(this.id)"></div>
+            <div id="palegreen" type="button" class="circle effect-1 sub-b" onclick="palegreen(); colourPicker(this.id)"></div>
+            <div id="blueviolet" type="button" class="circle effect-1 sub-b" onclick="blueviolet(); colourPicker(this.id)"></div>
+            <div id="navy" type="button" class="circle effect-1 sub-b" onclick="navy(); colourPicker(this.id)"></div>
+            <div id="indigo" type="button" class="circle effect-1 sub-b" onclick="indigo(); colourPicker(this.id)"></div>
+            <div id="peach" type="button" class="circle effect-1 sub-b" onclick="peach(); colourPicker(this.id)"></div>
+            <div id="aqua" type="button" class="circle effect-1 sub-b" onclick="aqua(); colourPicker(this.id)"></div>
+            <div id="mustard" type="button" class="circle effect-1 sub-b" onclick="mustard(); colourPicker(this.id)"></div>
+            <div id="white" type="button" class="circle effect-1 sub-b" onclick="white(); colourPicker(this.id)"></div>
+               
+        </br>
+                   <h3>Size Guide</h3>
+                   <h3>Your Custom Fit</h3>
+
+                   <button id="modal" class="button1 floated" >0</button>
+                <span>
+                    <button id="btn_checkout" style="display: none;" type="button" onclick="populateCheckoutModal()" class="button cart-submission floated" data-toggle="modal" data-target="#CheckoutModal">Checkout</button>
+                    <button id="modalBtn" onclick="colorSelected()" class="button floated" data-toggle="modal">Add to Cart</button>
+                </span>
+                   <br>
+                   <br>
+                   
+                    
+                   <div id="simpleModal" class="modal" tabindex="-1">
+                       <div class="modal-content">
+                           <div class="modal-header">
+                            <h4>Please add the quality of the iteam you selected</h4>
+                                <span class="closeBtn">&times;</span>
+                                <br>
+                           </div>
+                           <div class="modal-body">
+                            <div class="col-6 col-sm-6"><p1 class="secondary" id="modal-color">Selected color</p1></div>
+                                <a href="#"  class="btn minus-btn disabled" type="button" onclick="decrement()">-</a>
+                                <input type="text" id="quantity" value="0"></input>
+                                <a href="#" class="btn2 plus-btn" type="button" onclick="increment()">+</a>
+                           </div>
+                           <div class="modal-footer">
+                               <hr>
+                               <br>
+                               <br>
+                               <!--<button id="close">cancel</button>-->
+                               <button id="qnty-accept" onclick='addOrder()' data-dismiss="modal" type="button" class="btn3" style="background-color: lightgreen;"><b>Agree</b></button>
+                               <button type="button" class="btn3"  style="background-color: rgb(236, 143, 143);" data-dismiss="modal" onclick="disableAddCart()"><b>Cancel</b></button>
+                               
+                               
+                           </div>
+                       </div>
+
+                   </div>
+
+                 
+                   
+                    <hr>
+                    <h5 style="padding-top: 5px"><b>DETAILS</b></h5>
+                    <br>
+                    
+                    <div id="red" class="circle effect-1 sub-b gift"></div>
+                        <!-- <div id='colorPicked' class="row row-order">jd</div> -->
+                    <hr>
+                    <p2><b>Need Help?</b></p2><br>
+                    <p2><b>Shipping & Returns</b></p2>
+
+                   
+        </div>
+         <!--Loading the js-->
+         <script src="javafiles/rating.js"></script>
+         <!----------------------------------------------------------------------------->
+          <!----------------------------------->
+          <div id="secondModal" class="modal" tabindex="-1">
+            <div class="modal-content">
+                <div class="modal-header">
+                 <h4>Please add the quality of the iteam you selected</h4>
+                     <span class="closeBtn">&times;</span>
+                     <br>
+                </div>
+                <div class="modal-body">
+                 <div class="col-6 col-sm-6"><p1 class="secondary" id="modal-color">Selected color</p1></div>
+                     <a href="#"  class="btn minus-btn disabled" type="button" onclick="decrement()">-</a>
+                     <input type="text" id="quantity" value="0"></input>
+                     <a href="#" class="btn2 plus-btn" type="button" onclick="increment()">+</a>
+                </div>
+                <div class="modal-footer">
+                    <hr>
+                    <br>
+                    <br>
+                    <!--<button id="close">cancel</button>-->
+                    <button id="qnty-accept" onclick='addOrder()' data-dismiss="modal" type="button" class="btn3" style="background-color: lightgreen;"><b>Agree</b></button>
+                    <button type="button" class="btn3"  style="background-color: rgb(236, 143, 143);" data-dismiss="modal" onclick="disableAddCart()"><b>Cancel</b></button>
+                    
+                    
+                </div>
+            </div>
+
+        </div>
+           <!----------------------------------->
+
+
+    </body>
+</html>
